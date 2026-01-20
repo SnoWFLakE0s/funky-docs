@@ -1,8 +1,8 @@
 ---
-title: Control Practicals
+title: Examples
 layout: default
 parent: Learn
-nav_order: 9
+nav_order: 10
 ---
 # Control Practicals
 #### Real-world applications and common logic patterns.

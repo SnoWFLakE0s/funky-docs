@@ -2,7 +2,7 @@
 title: Operators
 layout: default
 parent: Learn
-nav_order: 5
+nav_order: 7
 ---
 # Operators
 #### The basic tools for mathematical and logical operations.

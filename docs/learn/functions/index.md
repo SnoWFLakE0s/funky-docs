@@ -2,7 +2,7 @@
 title: Functions
 layout: default
 parent: Learn
-nav_order: 7
+nav_order: 6
 ---
 # Functions
 #### Advanced mathematical tools and controllers.

@@ -2,7 +2,7 @@
 title: Using the Input Dialog or the Console Debugger
 layout: default
 parent: Learn
-nav_order: 2
+nav_order: 8
 ---
 # Using the Input Dialog or the Console Debugger
 #### How to enter, test, and debug expressions in-game.
