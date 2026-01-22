@@ -10,103 +10,55 @@ nav_order: 5
 
 Variables are the "inputs" for your expressions. They come in several different types, each with their own use cases and characteristics.
 
+Variables can be organized into three primary categories, regardless of type:
+
+* **Flight Controls**: Based on control inputs. These variables are controlled directly by the player as they pilot the craft. Examples include `Throttle`, `Roll`, and `FireGuns`.
+* **Craft State**: Based on what the craft is doing in the world. These variables are affected by player actions, but cannot be controlled directly. Examples include `PitchAngle` and `Fuel`.
+* **Target State**: Based on the state of a selected target *relative to the player's craft*. Examples include `TargetHeading` and `TargetSelected`.
+
+Within each of these categories, there are a maximum of five distinct types of variables: **number variables**, **booleans**, **strings**, **binary variables**, and **custom variables**.
+
 ## Number Variables
 
-Number variables are simply variables that produce a number based on their associated input condition, and are by far the most common variable type. Some number variables have inherent limits built into their output ranges, meaning that they will only ever output values within their assigned range. Other number variables are unrestricted, and can output any valid decimal value.
+Number variables are simply variables that produce a number based on their associated input condition, and are by far the most common variable type. Some number variables have inherent limits built into their output ranges, meaning that they will only ever output values within their assigned range. Other number variables are unrestricted, and can output any valid decimal value. Available number variables include `IAS`, `Altitude`, `Throttle`, `TargetHeading`, and others.
 
-The following groups of number-type input variables are available for every craft. See [Built-in Variables](/funkytrees/docs/reference/variables/builtin/) for details about each one.
-
-<details>
-<summary>
-
-### Flight Controls
-</summary>
-
-|   Name   	|     Description     	|    Range    	|
-|:--------:	|:-------------------:	|:-----------:	|
-| `Throttle` 	| Throttle axis input 	|  `0` to `1` 	|
-|   `Brake`  	|   Brake axis input  	|  `0` to `1` 	|
-|   `Roll`   	|   Roll axis input   	| `-1` to `1` 	|
-|   `Pitch`  	|   Pitch axis input  	| `-1` to `1` 	|
-|    `Yaw`   	|    Yaw axis input   	| `-1` to `1` 	|
-|   `Trim`   	|  Trim slider input  	| `-1` to `1` 	|
-|   `VTOL`   	|  VTOL slider input  	| `-1` to `1` 	|
-|   `Flaps`  	|  Flaps slider input 	| `-1` to `1` 	|
-
-</details>
-
-<details>
-<summary>
-
-### Craft State
-</summary>
-
-| Name | Description | Range |
-|:---:|:---:|:---:|
-| `Altitude` | Distance from sea level (meters) | `-inf` to `inf` |
-| `AltitudeAgl` | Distance from ground (meters) | `-inf` to `inf` |
-| `IAS` | Indicated airspeed (m/s) | `0` to `inf` |
-| `TAS` | True airspeed (m/s) | `0` to `inf` |
-| `GS` | Ground speed (m/s) | `0` to `inf` |
-| `Fuel` | Proportion of fuel remaining | `0` to `1` |
-| `AngleOfAttack` | Angle of attack (degrees) | `-180` to `180` |
-| `AngleOfSlip` | Angle of slip (degrees) | `-180` to `180` |
-| `PitchAngle` | Pitch angle from horizontal (degrees) | `-90` to `90` |
-| `RollAngle` | Roll angle from horizontal (degrees) | `-180` to `180` |
-| `PitchRate` | Rate at which the craft rotates about its x-axis (deg/s) | `-inf` to `inf` |
-| `RollRate` | Rate at which the craft rotates about its z-axis (deg/s) | `-inf` to `inf` |
-| `YawRate` | Rate at which the craft rotates about its y-axis (deg/s) | `-inf` to `inf` |
-| `Heading` | Aircraft heading (degrees) | `-180` to `180` |
-| `Latitude` | y-position of the craft in the world | `-inf` to `inf` |
-| `Longitude` | x-position of the craft in the world | `-inf` to `inf` |
-| `Time` | Time elapsed since craft was loaded (seconds) | `0` to `inf` |
-| `GForce` | Omnidirectional "force" on the pilot (g) | `0` to `inf` |
-| `VerticalG` | Vertical component of `GForce` (g) | `0` to `inf` |
-
-</details>
-
-<details>
-<summary>
-
-### Target State (relative to player craft)
-</summary>
-
-| Name | Description | Range |
-|:---:|:---:|:---:|
-| `TargetHeading` | Global heading to selected target (degrees) | `0` to `360` |
-| `TargetElevation` | Target elevation angle above/below horizon (degrees) | `-90` to `90` |
-| `TargetDistance` | Line-of-sight distance to selected target (meters) | `0` to `inf` |
-
-</details>
-
-## Built-in Variables
-These are available for every craft, and their values 
-* **Examples**: `Pitch`, `Altitude`, `GForce`, `TargetDistance`.
-
-## Custom Variables
-These are created by the user to perform specific tasks.
-* **Variable Setters**: Global variables created in the designer menu.
-* **Part Variables**: Specific data points from named parts (e.g., `MyEngine.RPM`).
-
-# Data in Funky Trees
-#### Understanding how the language handles different types of information.
----
-
-There are four types of variables in Funky Trees: numbers, booleans, binary variables, and strings.
-
-## Numbers
-Numbers are by far the most common variable type. Some are restricted to a certain range, but can be any decimal value within that range; others are fully unrestricted. Number variables are the primary method of incorporating flight control inputs and craft state information into Funky Trees expressions.
-
-
+See [Built-in Variables](/funkytrees/docs/reference/variables/builtin/) for a list of all available variables, including number variables.
 
 ## Booleans
-Booleans represent "true" or "false" states. In Funky Trees, these are often treated as `1` (true) and `-1` (false), though some logical operators specifically look for non-zero values. Activation Groups and triggers like `FireGuns` are the most common sources of Boolean data.
+Booleans represent `True`/`False` states, and are essentially the logical equivalent of a light switch: either an input is On (`True`) or it is Off (`False`). In Funky Trees, boolean variables can be used in combination with number variables, functions, and operators without any special modifications. Booleans are automatically converted from `True`/`False` to `1`/`-1` when used in combination with number variables, functions, or operators, streamlining the process and removing the need for any manual conversions.
+
+See [Built-in Variables](/funkytrees/docs/reference/variables/builtin/) for a list of all available variables, including booleans.
+
+## Strings
+
+A string variable is a line of text. Strings behave somewhat differently from other variable types: there is no defined range or list of output values, and the string variable instead outputs whatever text cooresponds to the value that it checks for.
+
+The only built-in string variable is `SelectedWeapon`, which outputs the name of the currently selected weapon (e.g. `Boom 50`, `Rocket`, `Cannon`) as a string.
+> Weapon names can be set or changed via the Part Name property in SimplePlanes 2.
+
+> Weapon names can be set or changed in SimplePlanes 1 by changing the `name` property in Overload, or by manually editing the craft's XML file.
 
 ## Binary
 
-**This is a deprecated variable type, and has been replaced by booleans.** Variables of the binary type output either `0` or `1` depending on the state of the variable's input. Most binary variables were converted to the boolean type for consistency, but `LandingGear` persists as a binary variable to ensure legacy compatibility.
+**This is a deprecated variable type, and has been replaced by booleans.** Binary variables output either `0` or `1` depending on the state of the variable's input parameter. Most binary variables were converted to the boolean type for consistency. However, `LandingGear` persists as a binary variable to ensure legacy compatibility, and can still be used as an alternative to the boolean variable `GearDown` if desired.
 
-| Name | Description | Range |
-|:---:|:---:|:---:|
-| `LandingGear` | Landing gear toggle input | `0`, `1`|
-> Although it is technically deprecated, `LandingGear` can still be used as an alternative to the boolean `GearDown` in some cases.  Note, however, that `LandingGear` behaves opposite to `GearDown` and becomes `1` when the landing gear is *retracted*, whereas `GearDown` becomes `True`/`1` when the landing gear is *extended*.
+> Note that `LandingGear` behaves opposite to `GearDown` and becomes `1` when the landing gear is *retracted*, whereas `GearDown` becomes `True`/`1` when the landing gear is *extended*.
+
+## Custom Variables
+
+In addition to the pre-defined variables listed above, it is possible for players to create their own custom variables for use with Funky Trees. There are two types of custom variables: **Setter Variables** and **Part Variables**.
+
+### Setter Variables
+
+Setter variables are, logically, created using the Variable Setter menu in the Designer. These are typically used as a means of "chunking" more complex Funky Trees expressions by isolating sections of code that are used multiple times. Setter variables can be defined with any name that is valid (see [Rules of Funky Trees](/funkytrees/docs/learn/rules/) and not already in use.
+
+See [Creating a Custom Variable](/funkytrees/docs/learn/variables/customvar) for details and an explanation of how to create your own custom variables. 
+
+### Part Variables
+
+Part variables are variables that are linked to certain properties or functions of a part, but do not have a predefined variable (like `GearDown`) associated with them. These are useful for more advanced crafts, and include attributes such as engine RPM and torque outputs, rotator angle, camera look direction, and wing lift force.
+
+See [Part Variables](/funkytrees/docs/learn/variables/partvar) for details.
+
+---
+Further documentation and a list of all available Funky Trees variables can be found in the can be found in the [Reference](/funkytrees/docs/reference/variables/) section.
