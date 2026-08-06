@@ -1,5 +1,5 @@
 ---
-title: FireWeapons
+title: Flaps
 layout: default
 parent: Input Variables
 grand_parent: Read-only Variables
