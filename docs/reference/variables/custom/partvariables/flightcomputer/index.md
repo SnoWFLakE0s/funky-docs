@@ -14,7 +14,7 @@ grand_parent: Custom Variables
 ## Part Variables
 * **Heading**: The current compass heading of the cockpit. (Degrees)
 * **PitchAngle**: The current pitch orientation of the cockpit relative to the horizon. Positive values indicate nose-up. (Degrees)
-* **PitchRate**: The current roll angle of the camera view. (Degrees per second)
+* **PitchRate**: The angular velocity of the cockpit around its lateral axis. (Degrees per second)
 * **PosX**: The current east-west coordinate of the cockpit in the game world.
 * **PosY**: The cockpit block's current altitude above sea level. (Meters)
 * **PosZ**: The current north-south coordinate of the cockpit in the game world.
