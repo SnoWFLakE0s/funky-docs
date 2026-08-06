@@ -9,7 +9,7 @@ grand_parent: Custom Variables
 ---
 
 ## XML ID
-`JPropEngineV`
+`JPropEngineFlat`
 
 ## Part Variables
 * **RPM**: How fast the engine's shaft is spinning. (Revolutions per minute)
