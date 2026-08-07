@@ -12,4 +12,4 @@ grand_parent: Custom Variables
 `Engine-Prop-1`
 
 ## Part Variables
-* **Thrust**: The current output force produced by the "jet" engine. (Newtons)
+* **Thrust**: The current thrust force produced by the engine. (Newtons)
