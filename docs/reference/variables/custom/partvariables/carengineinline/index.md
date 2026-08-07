@@ -13,4 +13,4 @@ grand_parent: Custom Variables
 
 ## Part Variables
 * **RPM**: How fast the engine's shaft is spinning. (Revolutions per minute)
-* **OutputTorque**: How much torque the engine is producing. (Newtons)
+* **OutputTorque**: How much torque the engine is producing. (Newtons-meters)
