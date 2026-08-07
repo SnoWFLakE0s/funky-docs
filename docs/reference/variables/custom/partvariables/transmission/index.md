@@ -14,5 +14,5 @@ grand_parent: Custom Variables
 ## Part Variables
 * **Gear**: The gear the transmission is currently in. Reverse gear (R) is -1 and neutral (N) is 0.
 * **GearRatio**: The transmission's current gear ratio.
-* **InputTorque**: The torque going into the transmission. (Newtons)
-* **OutputTorque**: The torque outputted by the transmission. (Newtons)
+* **InputTorque**: The torque on the input side of the transmission. (Newton-meters)
+* **OutputTorque**: The torque on the output side of the transmission. (Newton-meters)
