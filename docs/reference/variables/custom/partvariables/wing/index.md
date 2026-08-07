@@ -8,7 +8,7 @@ grand_parent: Custom Variables
 ---
 
 ## XML ID
-`Wing-1 or Wing-3`
+`Wing-1`, `Wing-3`
 
 ## Part Variables
 * **Drag**: The current aerodynamic resistance force acting on the wing. (Newtons)
